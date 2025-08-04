@@ -43,8 +43,10 @@
   <div class="particles" id="particles"></div>
 
   <div class="container">
-    <img src="/assets/yomnom icon.png" alt="Yomnom App Icon" class="app-icon desktop-icon">
-    <img src="/assets/icon_lowres.png" alt="Yomnom App Icon" class="app-icon mobile-icon">
+    <picture class="app-icon">
+      <source media="(max-width: 768px)" srcset="/assets/icon_lowres.png">
+      <img src="/assets/yomnom icon.png" alt="Yomnom App Icon">
+    </picture>
 
     <h1 class="logo">yomnom</h1>
 
