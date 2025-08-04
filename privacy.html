@@ -188,7 +188,98 @@
         padding: 2rem 1.5rem;
       }
     }
+
+    /* Dark mode styles for privacy page */
+    .dark-mode {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #cccccc;
+      --accent-primary: #ff6b6b;
+      --accent-secondary: #4ecdc4;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dark-mode body {
+      background: #1a1a1a;
+      color: var(--text-primary);
+    }
+
+    .dark-mode .privacy-title {
+      color: var(--accent-primary);
+    }
+
+    .dark-mode .privacy-subtitle {
+      color: var(--text-secondary);
+    }
+
+    .dark-mode h1 {
+      color: var(--accent-primary);
+    }
+
+    .dark-mode h2 {
+      color: var(--accent-secondary);
+    }
+
+    .dark-mode p,
+    .dark-mode li {
+      color: var(--text-secondary);
+    }
+
+    .dark-mode strong {
+      color: var(--accent-primary);
+    }
+
+    .dark-mode .back-button {
+      background: linear-gradient(135deg, var(--accent-primary), #ff4757);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    }
+
+    .dark-mode .back-button:hover {
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6);
+    }
+
+    .dark-mode .trust-badge {
+      color: var(--accent-primary);
+      border: 1px solid var(--border-color);
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+    }
+
+    .dark-mode .footer {
+      color: var(--text-secondary);
+    }
   </style>
+
+  <!-- Dark mode script -->
+  <script>
+    // Check for saved dark mode preference or default to light mode
+    if (localStorage.getItem('darkMode') === 'true' ||
+      (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark-mode');
+    }
+
+    // Listen for system preference changes
+    function handleSystemPreferenceChange(e) {
+      // Only auto-switch if user hasn't manually set a preference
+      if (localStorage.getItem('darkMode') === null) {
+        const shouldBeDark = e.matches;
+        const isCurrentlyDark = document.documentElement.classList.contains('dark-mode');
+
+        if (shouldBeDark !== isCurrentlyDark) {
+          if (shouldBeDark) {
+            document.documentElement.classList.add('dark-mode');
+          } else {
+            document.documentElement.classList.remove('dark-mode');
+          }
+        }
+      }
+    }
+
+    // Set up system preference listener
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    mediaQuery.addEventListener('change', handleSystemPreferenceChange);
+  </script>
 </head>
 
 <body>

@@ -208,8 +208,125 @@ body {
 
 
 
+/* Dark mode toggle */
+.dark-mode-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.toggle-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent-primary: #ff6b6b;
+  --accent-secondary: #4ecdc4;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode body {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, #0f0f0f 100%);
+  color: var(--text-primary);
+}
+
+.dark-mode .particle {
+  background: rgba(255, 107, 107, 0.3);
+}
+
+.dark-mode .particle.red {
+  background: rgba(255, 107, 107, 0.4);
+}
+
+.dark-mode .particle.purple {
+  background: rgba(156, 39, 176, 0.4);
+}
+
+.dark-mode .logo {
+  color: var(--accent-primary);
+  text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+}
+
+.dark-mode .tagline {
+  color: var(--accent-secondary);
+  text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+}
+
+.dark-mode .signup-section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode .signup-description {
+  color: var(--text-secondary);
+}
+
+.dark-mode .email-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-mode .email-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dark-mode .email-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.dark-mode .notify-btn {
+  background: linear-gradient(135deg, var(--accent-primary), #ff4757);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.dark-mode .notify-btn:hover {
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.7);
+}
+
+.dark-mode .dark-mode-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode .dark-mode-toggle .toggle-icon {
+  transform: rotate(180deg);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
+  .dark-mode-toggle {
+    top: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+  }
+  
   .email-form {
     flex-direction: column;
   }
