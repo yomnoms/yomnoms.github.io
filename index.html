@@ -1,11 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yomnom - Coming Soon</title>
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Poppins:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700;800;900&display=swap"
     rel="stylesheet">
   <!-- Chrome, Firefox OS and Opera -->
   <meta name="theme-color" content="#b59cdf">
@@ -13,96 +17,39 @@
   <meta name="msapplication-navbutton-color" content="#b59cdf">
   <!-- iOS Safari -->
   <meta name="apple-mobile-web-app-status-bar-style" content="#b59cdf">
-  <style>
-    .logo {
-      font-family: "DynaPuff", serif;
-      font-optical-sizing: auto;
-      font-weight: 800;
-      font-style: normal;
-      font-weight: 700;
-      font-style: normal;
-      font-size: 180px;
-      color: whitesmoke;
-      text-shadow:
-        -3px -3px 0 #032830,
-        /* Top-left shadow */
-        3px -3px 0 #032830,
-        /* Top-right shadow */
-        -3px 3px 0 #032830,
-        /* Bottom-left shadow */
-        3px 3px 0 #032830;
-      /* Bottom-right shadow */
-      position: relative;
-      z-index: 2;
-    }
-
-    .app-icon {
-      width: 280px;
-      height: 280px;
-      margin-bottom: 15px;
-      position: relative;
-      z-index: 2;
-      border-radius: 22px;
-      box-shadow:
-        0 12px 40px rgba(0, 0, 0, 0.2),
-        0 6px 20px rgba(0, 0, 0, 0.15),
-        0 3px 12px rgba(0, 0, 0, 0.1);
-      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
-    }
-
-    .content {
-      display: grid;
-      place-items: center;
-      height: 100vh;
-      position: relative;
-      z-index: 1;
-    }
-
-    .spotlight {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle,
-          rgba(255, 255, 255, 0.1) 0%,
-          rgba(255, 255, 255, 0.05) 40%,
-          transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    body {
-      background: #d4c5e8;
-      background-image:
-        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-        linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
-      background-size: 100% 100%, 100% 100%, 100% 100%, 20px 20px;
-      font-family: "Poppins", serif;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 32px;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div class="spotlight"></div>
-  <section class="content">
-    <img src="/assets/yomnom icon.png" alt="Yomnom App Icon" class="app-icon">
-    <div class="logo">
-      yomnom
-    </div>
-    Coming Soon!
-  </section>
+  <div class="loading-bar"></div>
 
+  <!-- Animated particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="container">
+    <img src="/assets/yomnom icon.png" alt="Yomnom App Icon" class="app-icon">
+
+    <h1 class="logo">yomnom</h1>
+
+    <p class="tagline">Future of food ordering</p>
+
+    <div class="signup-section">
+      <p class="signup-description">
+        Be the first to taste the future of food ordering
+      </p>
+      <form class="email-form" id="emailForm">
+        <input type="email" class="email-input" placeholder="Enter your email address" required>
+        <button type="submit" class="notify-btn">Notify Me</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- JavaScript modules -->
+  <script src="js/particles.js"></script>
+  <script src="js/food-effects.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
