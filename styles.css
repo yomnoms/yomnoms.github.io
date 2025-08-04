@@ -89,7 +89,7 @@ body {
   }
 }
 
-/* App icon */
+/* App icon base styles */
 .app-icon {
   width: clamp(120px, 25vw, 200px);
   height: clamp(120px, 25vw, 200px);
@@ -101,6 +101,16 @@ body {
     0 0 0 1px rgba(255, 255, 255, 0.1);
   animation: bounce 3s ease-in-out infinite;
   filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
+}
+
+/* Desktop icon */
+.desktop-icon {
+  display: block;
+}
+
+/* Mobile icon */
+.mobile-icon {
+  display: none;
 }
 
 @keyframes bounce {
@@ -234,6 +244,14 @@ body {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .desktop-icon {
+    display: none;
+  }
+  
+  .mobile-icon {
+    display: block;
+  }
+  
   .email-form {
     flex-direction: column;
   }
