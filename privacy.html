@@ -1,69 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy – Yomnom</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#b59cdf">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#b59cdf">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#b59cdf">
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Poppins", sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      color: #2F1B14;
       line-height: 1.6;
-      max-width: 720px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      color: #333;
     }
+
+    .privacy-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .privacy-header {
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+    }
+
+    .privacy-title {
+      font-family: "DynaPuff", cursive;
+      font-weight: 800;
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: #8B4513;
+      margin-bottom: 0.5rem;
+    }
+
+    .privacy-subtitle {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      color: #A0522D;
+      font-weight: 400;
+    }
+
+    .privacy-content {
+      padding: 3rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .privacy-content>div {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .privacy-content>div:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.15), transparent);
+    }
+
     h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: #8B4513;
+      font-weight: 700;
     }
+
     h2 {
       font-size: 1.2rem;
       margin-top: 2rem;
+      color: #A0522D;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-left: 0;
     }
+
+    h2::before {
+      content: "🍽️";
+      font-size: 1.2rem;
+    }
+
+    h2:nth-child(2)::before {
+      content: "🍕";
+    }
+
+    h2:nth-child(3)::before {
+      content: "🍴";
+    }
+
+    h2:nth-child(4)::before {
+      content: "👶";
+    }
+
+    h2:nth-child(5)::before {
+      content: "📋";
+    }
+
     p {
       margin-bottom: 1rem;
+      color: #2F1B14;
+      font-weight: 400;
     }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      color: #2F1B14;
+      font-weight: 400;
+    }
+
+    strong {
+      color: #8B4513;
+      font-weight: 700;
+    }
+
     .footer {
       margin-top: 3rem;
       font-size: 0.9rem;
-      color: #666;
+      color: #8B4513;
+      text-align: left;
+      padding: 2rem;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #8B4513, #A0522D);
+      border: 1px solid rgba(139, 69, 19, 0.3);
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(139, 69, 19, 0.6);
+    }
+
+    .trust-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0.5rem 0.5rem 0;
+      font-size: 0.9rem;
+      color: #8B4513;
+      font-weight: 600;
+      border: 1px solid rgba(139, 69, 19, 0.2);
+      border-radius: 6px;
+      background: linear-gradient(135deg, rgba(139, 69, 19, 0.05), rgba(160, 82, 45, 0.05));
+    }
+
+    @media (max-width: 768px) {
+      .privacy-container {
+        padding: 1rem;
+      }
+
+      .privacy-content {
+        padding: 2rem 1.5rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>Privacy Policy</h1>
-  <p><strong>Effective Date:</strong> July 28, 2025</p>
+  <div class="privacy-container">
+    <div class="privacy-header">
+      <h1 class="privacy-title">🍽️ Privacy Policy</h1>
+      <p class="privacy-subtitle">Your data, your control</p>
+    </div>
 
-  <h2>1. No Data Collection</h2>
-  <p>
-    Yomnom does <strong>not collect, store, or share</strong> any personal information or user data. This includes but is not limited to:
-  </p>
-  <ul>
-    <li>Names</li>
-    <li>Email addresses</li>
-    <li>Location data</li>
-    <li>Device identifiers</li>
-    <li>Usage analytics</li>
-  </ul>
+    <div class="privacy-content">
+      <h1>Privacy Policy</h1>
+      <p><strong>Effective Date:</strong> July 28, 2025</p>
 
-  <h2>2. Third-Party Services</h2>
-  <p>
-    Yomnom does not use any third-party analytics, advertising, or tracking services.
-  </p>
+      <h2>1. No Data Collection</h2>
+      <p>
+        Yomnom does <strong>not collect, store, or share</strong> any personal information or user data. This includes
+        but
+        is not limited to:
+      </p>
+      <ul>
+        <li>Names</li>
+        <li>Email addresses</li>
+        <li>Location data</li>
+        <li>Device identifiers</li>
+        <li>Usage analytics</li>
+      </ul>
+      <div>
+        <span class="trust-badge">🔐 Zero Data Collection</span>
+        <span class="trust-badge">🛡️ Privacy First</span>
+        <span class="trust-badge">📱 User Friendly</span>
+      </div>
 
-  <h2>3. Children’s Privacy</h2>
-  <p>
-    Yomnom is suitable for all ages and does not knowingly collect information from children under the age of 13.
-  </p>
+      <h2>2. Third-Party Services</h2>
+      <p>
+        Yomnom does not use any third-party analytics, advertising, or tracking services.
+      </p>
+      <div>
+        <span class="trust-badge">🚫 No Tracking</span>
+        <span class="trust-badge">🔒 No Third Parties</span>
+      </div>
 
-  <h2>4. Changes to This Policy</h2>
-  <p>
-    We may update this Privacy Policy occasionally. Any changes will be posted on this page with the updated effective date.
-  </p>
+      <h2>3. Children's Privacy</h2>
+      <p>
+        Yomnom is suitable for all ages and does not knowingly collect information from children under the age of 13.
+      </p>
+      <div>
+        <span class="trust-badge">👶 Child Safe</span>
+        <span class="trust-badge">🎯 All Ages</span>
+      </div>
 
-  <div class="footer">
-    &copy; 2025 Yomnom. All rights reserved.
+      <h2>4. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy occasionally. Any changes will be posted on this page with the updated
+        effective
+        date.
+      </p>
+      <div>
+        <span class="trust-badge">📅 Always Updated</span>
+        <span class="trust-badge">📢 Clear Communication</span>
+      </div>
+    </div>
+
+    <div>
+      <a href="index.html" class="back-button">
+        <span>←</span>
+        Back to Yomnom
+      </a>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Yomnom. All rights reserved.
+    </div>
   </div>
 </body>
+
 </html>

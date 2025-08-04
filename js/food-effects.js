@@ -13,7 +13,11 @@ function createFloatingFoodIcons() {
   container.className = 'floating-food-container';
   document.body.appendChild(container);
   
-  for (let i = 0; i < 30; i++) {
+  // Limit icons based on screen size
+  const isMobile = window.innerWidth <= 768;
+  const iconCount = isMobile ? 4 : 8;
+  
+  for (let i = 0; i < iconCount; i++) {
     const icon = document.createElement('div');
     icon.className = 'floating-food-icon';
     icon.textContent = foodIcons[Math.floor(Math.random() * foodIcons.length)];
